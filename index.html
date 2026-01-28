@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="description" content="A special Valentine's Day message just for you">
+    <meta name="theme-color" content="#8b0000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiVmFsZW50aW5lIE1lc3NhZ2UiLCJzaG9ydF9uYW1lIjoiVmFsZW50aW5lIiwiZGlzcGxheSI6InN0YW5kYWxvbmUiLCJiYWNrZ3JvdW5kX2NvbG9yIjoiI2Y5ZjlmOSIsInRoZW1lX2NvbG9yIjoiIzhiMDAwMCJ9">
+
+    <!-- OpenGraph Meta Tags -->
+    <meta property="og:title" content="Will You Be My Valentine?">
+    <meta property="og:description" content="Someone has a special question for you...">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=1200">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Will You Be My Valentine?">
+    <meta name="twitter:description" content="Someone has a special question for you...">
+
+    <!-- DNS Prefetch for Performance -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    
+    <!-- Preconnect for Critical Resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Preload Critical CSS -->
+    <link rel="preload" href="style.css" as="style">
+    
+    <!-- Preload Critical Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" as="style">
+
+    <title>Will You Be My Valentine? 💕</title>
+
+    <!-- Optimized Google Fonts with font-display: swap -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Critical CSS Inline for First Paint Optimization -->
+    <style>
+        body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:#f9f9f9;min-height:100vh;overflow-x:hidden}
+        .container{display:flex;align-items:center;justify-content:center;min-height:100vh;padding:1rem}
+        .hidden{opacity:0;pointer-events:none}
+    </style>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Preload JavaScript for faster execution -->
+    <link rel="preload" href="script.js" as="script">
+</head>
+
+<body>
+    <!-- Noise Texture Overlay -->
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+    <!-- Main Container -->
+    <main class="container" role="main">
+
+        <!-- STAGE 1: Envelope Section -->
+        <section id="envelope-section" class="envelope-section" aria-label="Valentine's envelope">
+            <div class="envelope-wrapper">
+                <div class="envelope" id="envelope" role="img" aria-label="Sealed envelope with love letter">
+                    <div class="envelope-flap" aria-hidden="true"></div>
+                    <div class="envelope-body" aria-hidden="true">
+                        <div class="letter" id="letter">
+                            <div class="letter-content">
+                                <span class="letter-icon" aria-hidden="true">💌</span>
+                                <p class="letter-text">You have a special message...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn-open" id="btn-open" aria-label="Open the Valentine's letter">
+                    <span>Open Letter</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- STAGE 2: Draggable Notes Section -->
+        <section id="notes-section" class="notes-section hidden" aria-label="Interactive love notes">
+            <div class="notes-container" id="notes-container" role="region" aria-label="Draggable notes collection">
+                <!-- Draggable Polaroids/Notes -->
+                <article class="draggable-note note-1" data-note="1" role="article" aria-label="Love note 1" tabindex="0">
+                    <div class="note-inner">
+                        <div class="note-emoji" aria-hidden="true">🌹</div>
+                        <p>Every moment with you...</p>
+                    </div>
+                </article>
+
+                <article class="draggable-note note-2" data-note="2" role="article" aria-label="Love note 2" tabindex="0">
+                    <div class="note-inner">
+                        <div class="note-emoji" aria-hidden="true">✨</div>
+                        <p>...is absolutely magical</p>
+                    </div>
+                </article>
+
+                <article class="draggable-note note-3" data-note="3" role="article" aria-label="Love note 3" tabindex="0">
+                    <div class="note-inner">
+                        <div class="note-emoji" aria-hidden="true">💫</div>
+                        <p>You make my heart skip</p>
+                    </div>
+                </article>
+
+                <article class="draggable-note note-4" data-note="4" role="article" aria-label="Love note 4" tabindex="0">
+                    <div class="note-inner">
+                        <div class="note-emoji" aria-hidden="true">🦋</div>
+                        <p>Like butterflies dancing</p>
+                    </div>
+                </article>
+
+                <article class="draggable-note note-5" data-note="5" role="article" aria-label="Love note 5" tabindex="0">
+                    <div class="note-inner">
+                        <div class="note-emoji" aria-hidden="true">💝</div>
+                        <p>So I have a question...</p>
+                    </div>
+                </article>
+            </div>
+
+            <p class="hint-text" id="hint-text" role="status" aria-live="polite">Drag the notes away to reveal something special</p>
+        </section>
+
+        <!-- STAGE 3: The Question Section -->
+        <section id="question-section" class="question-section hidden" aria-label="Valentine's Day question">
+            <div class="question-container glass-container" role="dialog" aria-labelledby="question-title">
+                <h1 class="question-title" id="question-title">Will You Be My Valentine?</h1>
+                <p class="question-subtitle">I promise to cherish every moment with you</p>
+
+                <div class="buttons-wrapper" id="buttons-wrapper" role="group" aria-label="Response options">
+                    <button class="btn btn-yes" id="btn-yes" aria-label="Accept Valentine's Day invitation">
+                        <span>Yes! 💕</span>
+                    </button>
+                    <button class="btn btn-no" id="btn-no" aria-label="Decline Valentine's Day invitation">
+                        <span>No</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- STAGE 4: Success Section -->
+        <section id="success-section" class="success-section hidden" aria-label="Celebration message" role="alert" aria-live="assertive">
+            <div class="success-container glass-container">
+                <div class="success-hearts" aria-hidden="true">💕</div>
+                <h1 class="success-title">Yay!</h1>
+                <p class="success-subtitle">I'm the luckiest person in the world!</p>
+                <p class="success-message">Can't wait to spend Valentine's Day with you 💝</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
